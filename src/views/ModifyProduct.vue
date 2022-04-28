@@ -21,7 +21,6 @@ import { useRoute } from "vue-router";
 import { onMounted } from "@vue/runtime-core";
 import { log } from "console";
 
-// const articles = ref({});
 const route = useRoute();
 const Articlestore = useListeCourse();
 
