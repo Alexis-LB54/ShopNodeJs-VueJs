@@ -16,10 +16,7 @@
 
 <script setup lang="ts">
 import { useListeCourse } from "../stores/list";
-import { ref } from "@vue/reactivity";
 import { useRoute } from "vue-router";
-import { onMounted } from "@vue/runtime-core";
-import { log } from "console";
 
 const route = useRoute();
 const Articlestore = useListeCourse();
@@ -27,9 +24,13 @@ const Articlestore = useListeCourse();
 var modifyArticle = Articlestore.list.find(
   (c) => String(c.id) === route.params.id
 );
+
 async function modifyProduct() {
   let response = await fetch("http://localhost:96/articles", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(modifyArticle),
   })
     .then((r) => r.json())
