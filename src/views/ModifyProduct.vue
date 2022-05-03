@@ -11,6 +11,8 @@
       <input type="number" v-model="modifyArticle.price" id="price" />
       <input type="submit" value="Modifier" />
     </form>
+    <button v-on:click="deleteArticle()"> Supprimer</button>
+
   </div>
 </template>
 
@@ -20,6 +22,7 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 const Articlestore = useListeCourse();
+const ArticleId = route.params.id;
 
 var modifyArticle = Articlestore.list.find(
   (c) => String(c.id) === route.params.id
@@ -38,6 +41,18 @@ async function modifyProduct() {
   console.log("voir modif", response);
 }
 
+async function deleteArticle() {
+  let response = await fetch(`http://localhost:96/delete/${ArticleId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((r) => r.json())
+    .catch();
+  console.log("fonction lancée!", response);
+}
+
 // export default {
 //   components: {},
 //   mounted() {
@@ -51,5 +66,24 @@ async function modifyProduct() {
 //   methods: {},
 // };
 </script>
-<style>
+
+<style scoped>
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #e5f9ff;
+  padding: 10px;
+  width: 500px;
+  border: 3px solid #49b0ff;
+  border-radius: 5px;
+}
+
+input {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  margin-left: 5px;
+  box-shadow: 1px 1px 1px #002fff;
+  cursor: pointer;
+}
 </style>
