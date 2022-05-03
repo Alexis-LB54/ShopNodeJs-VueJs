@@ -1,10 +1,10 @@
 
 <template>
   <div>
-    <form action="/auth" method="post">
+    <form @submit.prevent="login">
       <label for="username"> </label>
       <input
-        type="text"
+        type="text" v-model="user.username"
         name="username"
         placeholder="Username"
         id="username"
@@ -12,7 +12,7 @@
       />
       <label for="password"> </label>
       <input
-        type="password"
+        type="password" v-model="user.password"
         name="password"
         placeholder="Password"
         id="password"
@@ -24,6 +24,26 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "@vue/reactivity";
+
+const user = ref({
+  username: "",
+  password: "",
+});
+
+async function login() {
+  let response = await fetch("http://localhost:96/auth", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user.value),
+  })
+    .then((r) => r.json())
+    .catch();
+  console.log("voir user", user);
+}
+
 </script>
 
 <style scoped>
