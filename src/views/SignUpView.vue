@@ -1,10 +1,20 @@
 
 <template>
   <div>
-    <form @submit.prevent="login">
+    <form @submit.prevent="signup">
+      <label for="email"> </label>
+      <input
+        type="email"
+        v-model="user.email"
+        name="email"
+        placeholder="Email"
+        id="email"
+        required
+      />
       <label for="username"> </label>
       <input
-        type="text" v-model="user.username"
+        type="text"
+        v-model="user.username"
         name="username"
         placeholder="Username"
         id="username"
@@ -12,7 +22,8 @@
       />
       <label for="password"> </label>
       <input
-        type="password" v-model="user.password"
+        type="password"
+        v-model="user.password"
         name="password"
         placeholder="Password"
         id="password"
@@ -27,12 +38,13 @@
 import { ref } from "@vue/reactivity";
 
 const user = ref({
+  email: "",
   username: "",
   password: "",
 });
 
-async function login() {
-  let response = await fetch("http://localhost:96/login_check", {
+async function signup() {
+  let response = await fetch("http://localhost:96/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -43,7 +55,6 @@ async function login() {
     .catch();
   console.log("voir user", user);
 }
-
 </script>
 
 <style scoped>
