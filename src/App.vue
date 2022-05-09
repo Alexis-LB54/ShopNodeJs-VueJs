@@ -7,7 +7,6 @@ import Logout from "./components/school/logout.vue";
   <header>
     <div class="wrapper">
 
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -29,8 +28,23 @@ body {
   background-size: cover;
 }
 
+template {
+  display: flex;
+  justify-content: center;
+}
+
+/* div {
+  display: flex;
+} */
+
 #app{
   text-align: center;
+}
+
+#tableaudeliste{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 a,
