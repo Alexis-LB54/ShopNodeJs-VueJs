@@ -29,22 +29,8 @@ body {
   background-size: cover;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
-}
-
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+#app{
+  text-align: center;
 }
 
 a,
@@ -53,83 +39,45 @@ a,
   color: rgb(234, 255, 0);
   transition: 0.4s;
   font-size: 0.8cm;
+  width: 5cm;
 }
 
 nav {
   display: flex;
+  
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+form {
+  display: flex;
   flex-direction: column;
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  justify-content: center;
+  background-color: #f7ffe9;
+  padding: 5px;
+  width: 500px;
+  border: 3px solid #ff3700;
+  border-radius: 5px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+p {
+  color: #ff3700;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+button {
+  display: flex;
+  justify-content: center;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 420px;
+  /* margin-left: 5px; */
+  box-shadow: 1px 1px 1px #002fff;
+  cursor: pointer;
 }
 </style>

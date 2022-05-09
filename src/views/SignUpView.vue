@@ -55,25 +55,21 @@ async function signup() {
     .catch();
   console.log("voir user", user);
 }
+
+// async function sendmail() {
+//   let response = await fetch("http://localhost:96/mail", {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(user.value),
+//   })
+//     .then((r) => r.json())
+//     .catch();
+//   console.log("voir user", user);
+// }
 </script>
 
 <style scoped>
-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #e5f9ff;
-  padding: 10px;
-  width: 500px;
-  border: 3px solid #49b0ff;
-  border-radius: 5px;
-}
 
-input {
-  display: flex;
-  flex-direction: column;
-  width: 420px;
-  margin-left: 5px;
-  box-shadow: 1px 1px 1px #002fff;
-  cursor: pointer;
-}
 </style>
