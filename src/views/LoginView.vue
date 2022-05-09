@@ -4,7 +4,8 @@
     <form @submit.prevent="login">
       <label for="username"> </label>
       <input
-        type="text" v-model="user.username"
+        type="text"
+        v-model="user.username"
         name="username"
         placeholder="Username"
         id="username"
@@ -12,7 +13,8 @@
       />
       <label for="password"> </label>
       <input
-        type="password" v-model="user.password"
+        type="password"
+        v-model="user.password"
         name="password"
         placeholder="Password"
         id="password"
@@ -25,6 +27,11 @@
 
 <script setup lang="ts">
 import { ref } from "@vue/reactivity";
+import { useTokenStore } from "../stores/token";
+import { useRoute, useRouter } from "vue-router";
+
+const Storedutoken = useTokenStore();
+const router = useRouter();
 
 const user = ref({
   username: "",
@@ -41,9 +48,10 @@ async function login() {
   })
     .then((r) => r.json())
     .catch();
+  Storedutoken.token = response.token;
+  router.push("/liste");
   console.log("voir user", user);
 }
-
 </script>
 
 <style scoped>

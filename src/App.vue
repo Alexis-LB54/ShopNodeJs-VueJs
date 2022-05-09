@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "@/components/HelloWorld.vue";
+import Logout from "./components/school/logout.vue";
 </script>
 
 <template>
@@ -23,6 +24,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
         <RouterLink to="/liste">Liste de Produit</RouterLink>
         <RouterLink to="/add">Ajouter un Produit</RouterLink>
         <RouterLink to="/signup">Inscription</RouterLink>
+        <Logout />
       </nav>
     </div>
   </header>

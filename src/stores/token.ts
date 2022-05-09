@@ -4,12 +4,10 @@ export const useTokenStore = defineStore({
   id: "token",
   state: () => ({
     token: "",
-    refresh_token: "",
   }),
   persist: true,
   getters: {
     getToken: (state) => state.token,
-    getRefreshToken: (state) => state.refresh_token,
   },
   actions: {
     setToken(tk: string) {
