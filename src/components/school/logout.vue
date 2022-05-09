@@ -10,10 +10,12 @@ const router = useRouter();
 const tokenStore = useTokenStore();
 
 function unSetStore() {
+  tokenStore.token = "";
+  tokenStore.refresh_token = "";
+  tokenStore.roles = "";
   tokenStore.$reset();
   router.push("/login");
 }
-
 </script>
 
 <style>
