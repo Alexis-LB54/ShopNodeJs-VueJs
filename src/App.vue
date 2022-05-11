@@ -33,10 +33,6 @@ template {
   justify-content: center;
 }
 
-/* div {
-  display: flex;
-} */
-
 #app{
   text-align: center;
 }
@@ -48,6 +44,7 @@ template {
 }
 
 a,
+h1,
 .green {
   text-decoration: none;
   color: rgb(234, 255, 0);

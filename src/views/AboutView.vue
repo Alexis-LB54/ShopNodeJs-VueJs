@@ -24,7 +24,7 @@
     <input type="submit" value="Register" />
   </form>
   <p v-if="response !== ''">
-    {{ response }} <router-link to="/">Log in to your account</router-link>
+    {{ response }} <router-link to="/login">Log in to your account</router-link>
   </p>
 </template>
 <script>

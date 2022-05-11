@@ -1,5 +1,4 @@
 <template>
-<div>Coucou</div>
   <ul id="tableaudeliste">
     <li v-for="articles in getList" :key="articles.title">
       <form>
