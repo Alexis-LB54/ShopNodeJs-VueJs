@@ -52,19 +52,6 @@ async function deleteArticle() {
     .catch();
   console.log("fonction lancée!", response);
 }
-
-// export default {
-//   components: {},
-//   mounted() {
-//     this.articles.value = this.useListeCourse.articles.find((c) => String(c.id) === route.params.id);
-//   },
-
-//   computed: {
-//     ...mapWritableState(useListeCourse, ["list"]),
-//     ...mapState(useListeCourse, ["getList"]),
-//   },
-//   methods: {},
-// };
 </script>
 
 <style scoped>
